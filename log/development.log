@@ -1,0 +1,139 @@
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMovies (20160526125849)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "total_gross" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160526125849"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddFieldsToMovies (20160526130023)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "movies" ADD "description" text[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "movies" ADD "released_on" date[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160526130023"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddMoreFieldsToMovies (20160526164749)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "movies" ADD "cast" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "movies" ADD "director" varchar[0m
+  [1m[35m (3.6ms)[0m  [1m[35mALTER TABLE "movies" ADD "duration" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "movies" ADD "image_file_name" varchar DEFAULT ''[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160526164749"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" ORDER BY "ar_internal_metadata"."key" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-06-07 19:12:29 UTC], ["updated_at", 2016-06-07 19:12:29 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "total_gross", "created_at", "updated_at", "description", "released_on", "cast", "director", "duration", "image_file_name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Iron Man"], ["rating", "PG-13"], ["total_gross", #<BigDecimal:7fa4966daac8,'0.318412101E9',9(27)>], ["created_at", 2016-06-07 19:12:29 UTC], ["updated_at", 2016-06-07 19:12:29 UTC], ["description", "When wealthy industrialist Tony Stark is forced to build an armored suit after a life-threatening incident, he ultimately decides to use its technology to fight against evil."], ["released_on", Fri, 02 May 2008], ["cast", "Robert Downey Jr., Gwyneth Paltrow and Terrence Howard"], ["director", "Jon Favreau"], ["duration", "126 min"], ["image_file_name", "ironman.jpg"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "total_gross", "created_at", "updated_at", "description", "released_on", "cast", "director", "duration", "image_file_name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Superman"], ["rating", "PG"], ["total_gross", #<BigDecimal:7fa4966b9620,'0.134218018E9',9(27)>], ["created_at", 2016-06-07 19:12:29 UTC], ["updated_at", 2016-06-07 19:12:29 UTC], ["description", "An alien orphan is sent from his dying planet to Earth, where he grows up to become his adoptive home's first and greatest super-hero."], ["released_on", Fri, 15 Dec 1978], ["cast", "Christopher Reeve, Margot Kidder and Gene Hackman"], ["director", "Richard Donner"], ["duration", "143 min"], ["image_file_name", "superman.jpg"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "total_gross", "created_at", "updated_at", "description", "released_on", "cast", "director", "duration", "image_file_name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Spider-Man"], ["rating", "PG-13"], ["total_gross", #<BigDecimal:7fa496692890,'0.403706375E9',9(27)>], ["created_at", 2016-06-07 19:12:29 UTC], ["updated_at", 2016-06-07 19:12:29 UTC], ["description", "When bitten by a genetically modified spider, a nerdy, shy, and awkward high school student gains spider-like abilities that he eventually must use to fight evil as a superhero after tragedy befalls his family."], ["released_on", Fri, 03 May 2002], ["cast", "Tobey Maguire, Kirsten Dunst and Willem Dafoe"], ["director", "Sam Raimi"], ["duration", "121 min"], ["image_file_name", "spiderman.jpg"]]
+  [1m[35m (25.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "total_gross", "created_at", "updated_at", "description", "released_on", "cast", "director", "duration", "image_file_name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Batman"], ["rating", "PG-13"], ["total_gross", #<BigDecimal:7fa496670998,'0.251188924E9',9(27)>], ["created_at", 2016-06-07 19:12:29 UTC], ["updated_at", 2016-06-07 19:12:29 UTC], ["description", "The Dark Knight of Gotham City begins his war on crime with his first major enemy being the clownishly homicidal Joker."], ["released_on", Fri, 23 Jun 1989], ["cast", "Michael Keaton, Jack Nicholson and Kim Basinger"], ["director", "Tim Burton"], ["duration", "126 min"], ["image_file_name", "batman.jpg"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "total_gross", "created_at", "updated_at", "description", "released_on", "cast", "director", "duration", "image_file_name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Catwoman"], ["rating", "PG-13"], ["total_gross", #<BigDecimal:7fa4946fad70,'0.402E8',9(36)>], ["created_at", 2016-06-07 19:12:29 UTC], ["updated_at", 2016-06-07 19:12:29 UTC], ["description", "Patience Philips seems destined to spend her life apologizing for taking up space. Despite her artistic ability&mdash;she has a more than respectable career as a graphic designer."], ["released_on", Fri, 23 Jul 2004], ["cast", "Halle Berry, Sharon Stone and Benjamin Bratt"], ["director", "Jean-Christophe 'Pitof' Comar"], ["duration", "101 min"], ["image_file_name", "catwoman.jpg"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "total_gross", "created_at", "updated_at", "description", "released_on", "cast", "director", "duration", "image_file_name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Batman vs. Godzilla"], ["rating", "PG-13"], ["total_gross", #<BigDecimal:7fa4946c0968,'0.38762391E9',9(27)>], ["created_at", 2016-06-07 19:12:29 UTC], ["updated_at", 2016-06-07 19:12:29 UTC], ["description", "An epic battle between The Caped Crusader and the fire-breathing dinosaur Gojira. Hang on to your popcorn, kids!"], ["released_on", Fri, 17 Jun 2016], ["cast", "Bruce Wayne, Gojira"], ["director", "Ishiro Honda"], ["duration", "211 min"], ["image_file_name", "batman-vs-godzilla.jpg"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2016-06-07 15:14:20 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on <= '2016-06-07 19:14:21.239097') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (1845.7ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 2082ms (Views: 2037.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/normalize.self-ca7c3f9c26df461561ea2e4ac7101b122f99211810ca1fb6f9acd17d48421223.css?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/layout.self-644d89740c7e822442f6baae2577b3e6515247cce5309309de8fa26d7759adb9.css?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/application.self-c4441ca9ff45f38d456d145385ebfdfcaa59f48649945503bbd2d3b6d47ecbc0.css?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/elements.self-05b80a4de2426c541e7d670041cf7d626517e0a9aa3316618ed6210200a7d0b1.css?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/movies.self-8be0236bb852f9e4a3854d6bef66afaa35707d30f02d13d1bbf54dbf7f3d6f83.css?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/forms.self-3548402989718bc3790581a38678f471fa420def206bdcfb84b83de37fb6c847.css?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/turbolinks.self-ff1d37d088bcba87ddd5a9edcbdbf45f1103309d3785dfd2324d668bde626e5d.js?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/action_cable.self-97a1acc11db2782c1b61ce874bff887f64e903d3cb2b533eff50fb799c873c70.js?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/ironman-e3eb46732f64b648aa205d41693e65f25a18ca53c8a777dfbdb94e552b45c7ba.jpg" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/catwoman-74f9530cf6824a8dbfc08ed06db0448512e3d4f368aede2770da9839b7f0c489.jpg" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/spiderman-148e65c4439935300de473edec6a11e372da6f38e6e2549dd43293c55a602d27.jpg" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/batman-e253babe1b7ff52b2452e4114d0304aa3bbcd105c4bfced84c22f2e8e4974f7e.jpg" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/superman-5840ede83799c51c162005328c1ef5cc536b5f1210d9bdb4a38102c4e4c1e01b.jpg" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/buttons.self-c590f8c9552f26e8cc04cc67d360c0ed17cd1e1c55418082a31e66e7b46e1e64.css?body=1" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/background-11366054192e366b66ab01175a43f03fa2c766b72812b4e0ef3e1c7890ecc9d0.jpg" for ::1 at 2016-06-07 15:14:23 -0400
+Started GET "/assets/arrow-855369fe3622cc5aad693bdaaf04bbfac7aad4439b63669dd1db64201875be9d.png" for ::1 at 2016-06-07 15:14:24 -0400
+Started GET "/assets/add-ef2a2c8a3e0973073c78930aff7279bfba272dacfe66f94c6a58d1e6998d34d5.png" for ::1 at 2016-06-07 15:14:24 -0400
+Started GET "/assets/logo-ed785c56e2cc4db30aa09ab20f07a6b4063d9425beb0d0d5cd42234be62d608e.png" for ::1 at 2016-06-07 15:14:24 -0400
+Started GET "/movies/new" for ::1 at 2016-06-07 15:14:46 -0400
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (106.3ms)
+  Rendered movies/new.html.erb within layouts/application (110.9ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 250ms (Views: 223.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for ::1 at 2016-06-07 15:14:51 -0400
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on <= '2016-06-07 19:14:51.064046') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (20.3ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 105ms (Views: 100.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies/1" for ::1 at 2016-06-07 15:14:52 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 431ms (Views: 71.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/movies/1/edit" for ::1 at 2016-06-07 15:15:01 -0400
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/_form.html.erb (10.4ms)
+  Rendered movies/edit.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 100ms (Views: 75.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/movies" for ::1 at 2016-06-07 15:15:05 -0400
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on <= '2016-06-07 19:15:05.336566') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (63.1ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 171ms (Views: 167.4ms | ActiveRecord: 0.5ms)
+
+
