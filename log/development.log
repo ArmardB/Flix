@@ -1432,3 +1432,256 @@ Started GET "/assets/spiderman-148e65c4439935300de473edec6a11e372da6f38e6e2549dd
 Started GET "/assets/batman-e253babe1b7ff52b2452e4114d0304aa3bbcd105c4bfced84c22f2e8e4974f7e.jpg" for ::1 at 2016-06-07 17:33:06 -0400
 Started GET "/assets/superman-5840ede83799c51c162005328c1ef5cc536b5f1210d9bdb4a38102c4e4c1e01b.jpg" for ::1 at 2016-06-07 17:33:06 -0400
 Started GET "/assets/buttons.self-c590f8c9552f26e8cc04cc67d360c0ed17cd1e1c55418082a31e66e7b46e1e64.css?body=1" for ::1 at 2016-06-07 17:33:06 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateReviews (20160607221927)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "stars" integer, "comment" text, "movie_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (23.7ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_reviews_on_movie_id" ON "reviews" ("movie_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160607221927"]]
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" ORDER BY "ar_internal_metadata"."key" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_reviews_on_movie_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_reviews_on_movie_id' AND type='index'
+[0m
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mReview Load (5.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (46.1ms)[0m  [1m[32mINSERT INTO "reviews" ("name", "stars", "comment", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Roger Ebert"], ["stars", 3], ["comment", "I laughed, I cried, I spilled my popcorn!"], ["movie_id", 1], ["created_at", 2016-06-07 22:34:50 UTC], ["updated_at", 2016-06-07 22:34:50 UTC]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (25.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (29.1ms)[0m  [1m[32mINSERT INTO "reviews" ("name", "stars", "comment", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gene Siskel"], ["stars", 5], ["comment", "I'm a better reviewer than he is."], ["movie_id", 1], ["created_at", 2016-06-07 22:37:49 UTC], ["updated_at", 2016-06-07 22:37:49 UTC]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (202.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (24.8ms)[0m  [1m[32mINSERT INTO "reviews" ("name", "stars", "comment", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Peter Travers"], ["stars", 4], ["comment", "It's been years since a movie superhero was this fierce and this funny."], ["movie_id", 1], ["created_at", 2016-06-07 22:48:40 UTC], ["updated_at", 2016-06-07 22:48:40 UTC]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  [1m[35mSQL (34.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 2]]
+  [1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 3]]
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 1]]
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/movies" for ::1 at 2016-06-07 18:55:01 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (13.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on <= '2016-06-07 22:55:01.523409') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (136.4ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_sidebar.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 946ms (Views: 854.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.self-c4441ca9ff45f38d456d145385ebfdfcaa59f48649945503bbd2d3b6d47ecbc0.css?body=1" for ::1 at 2016-06-07 18:55:02 -0400
+Started GET "/assets/normalize.self-ca7c3f9c26df461561ea2e4ac7101b122f99211810ca1fb6f9acd17d48421223.css?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/layout.self-644d89740c7e822442f6baae2577b3e6515247cce5309309de8fa26d7759adb9.css?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/elements.self-05b80a4de2426c541e7d670041cf7d626517e0a9aa3316618ed6210200a7d0b1.css?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/movies.self-8be0236bb852f9e4a3854d6bef66afaa35707d30f02d13d1bbf54dbf7f3d6f83.css?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/forms.self-3548402989718bc3790581a38678f471fa420def206bdcfb84b83de37fb6c847.css?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/turbolinks.self-ff1d37d088bcba87ddd5a9edcbdbf45f1103309d3785dfd2324d668bde626e5d.js?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/action_cable.self-97a1acc11db2782c1b61ce874bff887f64e903d3cb2b533eff50fb799c873c70.js?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/buttons.self-c590f8c9552f26e8cc04cc67d360c0ed17cd1e1c55418082a31e66e7b46e1e64.css?body=1" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/avengers-f0c5d0f2b61456cdb6fbfd804e954adc64a6314fd5caf12596a66c675c85d215.jpg" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/batman-e253babe1b7ff52b2452e4114d0304aa3bbcd105c4bfced84c22f2e8e4974f7e.jpg" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/spiderman-148e65c4439935300de473edec6a11e372da6f38e6e2549dd43293c55a602d27.jpg" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/catwoman-74f9530cf6824a8dbfc08ed06db0448512e3d4f368aede2770da9839b7f0c489.jpg" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/assets/superman-5840ede83799c51c162005328c1ef5cc536b5f1210d9bdb4a38102c4e4c1e01b.jpg" for ::1 at 2016-06-07 18:55:03 -0400
+Started GET "/movies/new" for ::1 at 2016-06-07 18:58:16 -0400
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (2.0ms)
+  Rendered movies/_form.html.erb (38.8ms)
+  Rendered movies/new.html.erb within layouts/application (59.8ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_sidebar.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 522ms (Views: 484.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for ::1 at 2016-06-07 19:00:14 -0400
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8J8YlvRIRabcJrcN9UAL/mMYzdMuxg6FBc3vcM9OXy/JsSxlCLYa6cb+vrYcCIlg1sfoQRioYxxUbPoT4iEIYg==", "movie"=>{"title"=>"Iron Man", "description"=>"After being held captive in an Afghan cave, a billionaire engineer creates a unique weaponized suit of armor to fight evil.", "rating"=>"PG-13", "released_on(1i)"=>"2011", "released_on(2i)"=>"5", "released_on(3i)"=>"2", "total_gross"=>"318412101", "duration"=>"126 min", "image_file_name"=>"ironman.png", "cast"=>"Robert Downey Jr., Gwyneth Paltrow, Terrance Howard", "director"=>"Jon Favreau"}, "commit"=>"Create Movie"}
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (35.9ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "total_gross", "created_at", "updated_at", "description", "released_on", "cast", "director", "duration", "image_file_name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Iron Man"], ["rating", "PG-13"], ["total_gross", #<BigDecimal:7fd0735d6060,'0.318412101E9',9(18)>], ["created_at", 2016-06-07 23:00:14 UTC], ["updated_at", 2016-06-07 23:00:14 UTC], ["description", "After being held captive in an Afghan cave, a billionaire engineer creates a unique weaponized suit of armor to fight evil."], ["released_on", Mon, 02 May 2011], ["cast", "Robert Downey Jr., Gwyneth Paltrow, Terrance Howard"], ["director", "Jon Favreau"], ["duration", "126 min"], ["image_file_name", "ironman.png"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/movies/10
+Completed 302 Found in 68ms (ActiveRecord: 39.4ms)
+
+
+Started GET "/movies/10" for ::1 at 2016-06-07 19:00:14 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (157.9ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_flashes.html.erb (1.1ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 494ms (Views: 461.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/ironman.png" for ::1 at 2016-06-07 19:00:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/ironman.png"):
+  
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.2.0) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.2.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.2.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc1) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered collection of /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [17 times] (12.9ms)
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.9ms)
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (230.2ms)
+Started GET "/movies/10/edit" for ::1 at 2016-06-07 19:00:32 -0400
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (23.4ms)
+  Rendered movies/_form.html.erb (38.4ms)
+  Rendered movies/edit.html.erb within layouts/application (50.8ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_sidebar.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 187ms (Views: 150.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/ironman.png" for ::1 at 2016-06-07 19:00:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/ironman.png"):
+  
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.2.0) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.2.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.2.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc1) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered collection of /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [17 times] (11.3ms)
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (213.7ms)
+Started PATCH "/movies/10" for ::1 at 2016-06-07 19:00:41 -0400
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nMXwG0YoI4E78jXFftCySmx+OZmc1CrvjoupvWiDynSW+353iC2L77fTocGSHKptH2DvpciEkqGI9WkpxrKnYQ==", "movie"=>{"title"=>"Iron Man", "description"=>"After being held captive in an Afghan cave, a billionaire engineer creates a unique weaponized suit of armor to fight evil.", "rating"=>"PG-13", "released_on(1i)"=>"2011", "released_on(2i)"=>"5", "released_on(3i)"=>"2", "total_gross"=>"318412101.0", "duration"=>"126 min", "image_file_name"=>"ironman.jpg", "cast"=>"Robert Downey Jr., Gwyneth Paltrow, Terrance Howard", "director"=>"Jon Favreau"}, "commit"=>"Update Movie", "id"=>"10"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "movies" SET "image_file_name" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["image_file_name", "ironman.jpg"], ["updated_at", 2016-06-07 23:00:41 UTC], ["id", 10]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/movies/10
+Completed 302 Found in 13ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/movies/10" for ::1 at 2016-06-07 19:00:41 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (38.7ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_flashes.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 148ms (Views: 141.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies" for ::1 at 2016-06-07 19:00:46 -0400
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on <= '2016-06-07 23:00:46.832310') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (56.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 265ms (Views: 144.3ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Iron Man"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (15.9ms)[0m  [1m[32mINSERT INTO "reviews" ("name", "stars", "comment", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Roger Ebert"], ["stars", 3], ["comment", "I laughed, I cried, I spilled my popcorn!"], ["movie_id", 10], ["created_at", 2016-06-07 23:05:17 UTC], ["updated_at", 2016-06-07 23:05:17 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "reviews" ("name", "stars", "comment", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Gene Siskel"], ["stars", 5], ["comment", "I'm a better reviewer than he is."], ["movie_id", 10], ["created_at", 2016-06-07 23:05:30 UTC], ["updated_at", 2016-06-07 23:05:30 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("name", "stars", "comment", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Peter Travers"], ["stars", 4], ["comment", "It's been years since a movie superhero was this fierce and this funny."], ["movie_id", 10], ["created_at", 2016-06-07 23:05:41 UTC], ["updated_at", 2016-06-07 23:05:41 UTC]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Superman"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.0ms)[0m  [1m[32mINSERT INTO "reviews" ("name", "stars", "comment", "movie_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Elvis Mitchell"], ["stars", 5], ["comment", "It's a bird, it's a plane, it's a blockbuster!"], ["movie_id", 2], ["created_at", 2016-06-07 23:07:08 UTC], ["updated_at", 2016-06-07 23:07:08 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
