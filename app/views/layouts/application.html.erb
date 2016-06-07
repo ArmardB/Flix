@@ -14,14 +14,11 @@
     <div id="wrapper">
 
       <% if flash[:notice] %>
-        <p class="flash notice">
-          <%= flash[:notice] %>
-        </p>
+        <%= render '/layouts/flashes' %>
       <% end %>
 
       <% if flash[:alert] %>
-        <p class="flash alert">
-          <%= flash[:alert] %>
+        <%= render '/layouts/flashes' %>
       <% end %>
 
       <div id="container">
