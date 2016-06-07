@@ -752,3 +752,412 @@ Processing by MoviesController#show as HTML
 Completed 200 OK in 118ms (Views: 88.1ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/movies/7/edit" for ::1 at 2016-06-07 17:15:15 -0400
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (2.4ms)
+  Rendered movies/_form.html.erb (41.2ms)
+  Rendered movies/edit.html.erb within layouts/application (60.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_sidebar.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 577ms (Views: 479.9ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/movies/7" for ::1 at 2016-06-07 17:15:21 -0400
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6TKJBfEMnOm01w9goVypiNUz5wSuJ1fMsD3d18n2EdTUfComr6Vl5/uPVgO3SGmKciaIsRa3vzEwr8BfXHVnQw==", "movie"=>{"title"=>"The Avenger", "description"=>"Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.", "rating"=>"PG-13", "released_on(1i)"=>"2012", "released_on(2i)"=>"5", "released_on(3i)"=>"4", "total_gross"=>"623357910.0", "duration"=>"142 min", "image_file_name"=>"avengers.jpg", "cast"=>"Robert Downey Jr., Chris Evans, Scarlett Johansson", "director"=>"Josh Whedon"}, "commit"=>"Update Movie", "id"=>"7"}
+  [1m[36mMovie Load (1.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "movies" SET "title" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["title", "The Avenger"], ["updated_at", 2016-06-07 21:15:21 UTC], ["id", 7]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/movies/7
+Completed 302 Found in 25ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/movies/7" for ::1 at 2016-06-07 17:15:21 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (34.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 292ms (Views: 272.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/7/edit" for ::1 at 2016-06-07 17:17:04 -0400
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (17.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.3ms)
+  Rendered movies/_form.html.erb (36.4ms)
+  Rendered movies/edit.html.erb within layouts/application (114.9ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_sidebar.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 567ms (Views: 528.7ms | ActiveRecord: 17.4ms)
+
+
+Started PATCH "/movies/7" for ::1 at 2016-06-07 17:17:09 -0400
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AyQ0He2LjqYKWl4APL2/dCON+ncsJ8fb6DfRkWtrOw8+apc+syJ3qEUCB2MqqX92hJiVwpS3LyZopcwZ/uhNmA==", "movie"=>{"title"=>"The Avengers", "description"=>"Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.", "rating"=>"PG-13", "released_on(1i)"=>"2012", "released_on(2i)"=>"5", "released_on(3i)"=>"4", "total_gross"=>"623357910.0", "duration"=>"142 min", "image_file_name"=>"avengers.jpg", "cast"=>"Robert Downey Jr., Chris Evans, Scarlett Johansson", "director"=>"Josh Whedon"}, "commit"=>"Update Movie", "id"=>"7"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "movies" SET "title" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["title", "The Avengers"], ["updated_at", 2016-06-07 21:17:09 UTC], ["id", 7]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/movies/7
+Completed 302 Found in 12ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/movies/7" for ::1 at 2016-06-07 17:17:09 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (45.6ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_sidebar.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (2.4ms)
+Completed 200 OK in 167ms (Views: 144.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/7" for ::1 at 2016-06-07 17:17:13 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 127ms (Views: 122.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/layout.self-644d89740c7e822442f6baae2577b3e6515247cce5309309de8fa26d7759adb9.css?body=1" for ::1 at 2016-06-07 17:17:13 -0400
+Started GET "/assets/elements.self-05b80a4de2426c541e7d670041cf7d626517e0a9aa3316618ed6210200a7d0b1.css?body=1" for ::1 at 2016-06-07 17:17:13 -0400
+Started GET "/assets/normalize.self-ca7c3f9c26df461561ea2e4ac7101b122f99211810ca1fb6f9acd17d48421223.css?body=1" for ::1 at 2016-06-07 17:17:13 -0400
+Started GET "/assets/application.self-c4441ca9ff45f38d456d145385ebfdfcaa59f48649945503bbd2d3b6d47ecbc0.css?body=1" for ::1 at 2016-06-07 17:17:13 -0400
+Started GET "/assets/movies.self-8be0236bb852f9e4a3854d6bef66afaa35707d30f02d13d1bbf54dbf7f3d6f83.css?body=1" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/buttons.self-c590f8c9552f26e8cc04cc67d360c0ed17cd1e1c55418082a31e66e7b46e1e64.css?body=1" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/forms.self-3548402989718bc3790581a38678f471fa420def206bdcfb84b83de37fb6c847.css?body=1" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/turbolinks.self-ff1d37d088bcba87ddd5a9edcbdbf45f1103309d3785dfd2324d668bde626e5d.js?body=1" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/action_cable.self-97a1acc11db2782c1b61ce874bff887f64e903d3cb2b533eff50fb799c873c70.js?body=1" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/avengers-f0c5d0f2b61456cdb6fbfd804e954adc64a6314fd5caf12596a66c675c85d215.jpg" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/background-11366054192e366b66ab01175a43f03fa2c766b72812b4e0ef3e1c7890ecc9d0.jpg" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/arrow-855369fe3622cc5aad693bdaaf04bbfac7aad4439b63669dd1db64201875be9d.png" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/add-ef2a2c8a3e0973073c78930aff7279bfba272dacfe66f94c6a58d1e6998d34d5.png" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/assets/logo-ed785c56e2cc4db30aa09ab20f07a6b4063d9425beb0d0d5cd42234be62d608e.png" for ::1 at 2016-06-07 17:17:14 -0400
+Started GET "/movies/7/edit" for ::1 at 2016-06-07 17:18:56 -0400
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (17.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.8ms)
+  Rendered movies/_form.html.erb (19.8ms)
+  Rendered movies/edit.html.erb within layouts/application (36.3ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 17.7ms)
+
+
+  
+SyntaxError (/Users/administrator/Desktop/Flix/flix/app/views/layouts/application.html.erb:16: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...er.append=( if flash[:notice] );@output_buffer.safe_append='
+...                               ^
+/Users/administrator/Desktop/Flix/flix/app/views/layouts/application.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;       end 
+                   ^
+/Users/administrator/Desktop/Flix/flix/app/views/layouts/application.html.erb:37: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/administrator/Desktop/Flix/flix/app/views/layouts/application.html.erb:39: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/layouts/application.html.erb:16: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/application.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/application.html.erb:37: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:39: syntax error, unexpected keyword_end, expecting ')'
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.8ms)
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (148.4ms)
+Started GET "/movies/7/edit" for ::1 at 2016-06-07 17:19:31 -0400
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (1.0ms)
+  Rendered movies/_form.html.erb (13.7ms)
+  Rendered movies/edit.html.erb within layouts/application (17.2ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_sidebar.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 443ms (Views: 438.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-c4441ca9ff45f38d456d145385ebfdfcaa59f48649945503bbd2d3b6d47ecbc0.css?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/normalize.self-ca7c3f9c26df461561ea2e4ac7101b122f99211810ca1fb6f9acd17d48421223.css?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/layout.self-644d89740c7e822442f6baae2577b3e6515247cce5309309de8fa26d7759adb9.css?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/elements.self-05b80a4de2426c541e7d670041cf7d626517e0a9aa3316618ed6210200a7d0b1.css?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/movies.self-8be0236bb852f9e4a3854d6bef66afaa35707d30f02d13d1bbf54dbf7f3d6f83.css?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/turbolinks.self-ff1d37d088bcba87ddd5a9edcbdbf45f1103309d3785dfd2324d668bde626e5d.js?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/action_cable.self-97a1acc11db2782c1b61ce874bff887f64e903d3cb2b533eff50fb799c873c70.js?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/forms.self-3548402989718bc3790581a38678f471fa420def206bdcfb84b83de37fb6c847.css?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/buttons.self-c590f8c9552f26e8cc04cc67d360c0ed17cd1e1c55418082a31e66e7b46e1e64.css?body=1" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/background-11366054192e366b66ab01175a43f03fa2c766b72812b4e0ef3e1c7890ecc9d0.jpg" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/logo-ed785c56e2cc4db30aa09ab20f07a6b4063d9425beb0d0d5cd42234be62d608e.png" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/add-ef2a2c8a3e0973073c78930aff7279bfba272dacfe66f94c6a58d1e6998d34d5.png" for ::1 at 2016-06-07 17:19:32 -0400
+Started GET "/assets/arrow-855369fe3622cc5aad693bdaaf04bbfac7aad4439b63669dd1db64201875be9d.png" for ::1 at 2016-06-07 17:19:32 -0400
+Started PATCH "/movies/7" for ::1 at 2016-06-07 17:19:38 -0400
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lfTR6M8nVSfjVgIb6dA26y4d4g5+IWv/vfjusx94LQgqTT+Fk1dXwQHmEpLOaTt1ID+dzrnlBOYl+/gDoEIqHA==", "movie"=>{"title"=>"The Avenger", "description"=>"Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.", "rating"=>"PG-13", "released_on(1i)"=>"2012", "released_on(2i)"=>"5", "released_on(3i)"=>"4", "total_gross"=>"623357910.0", "duration"=>"142 min", "image_file_name"=>"avengers.jpg", "cast"=>"Robert Downey Jr., Chris Evans, Scarlett Johansson", "director"=>"Josh Whedon"}, "commit"=>"Update Movie", "id"=>"7"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "movies" SET "title" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["title", "The Avenger"], ["updated_at", 2016-06-07 21:19:38 UTC], ["id", 7]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/movies/7
+Completed 302 Found in 10ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/movies/7" for ::1 at 2016-06-07 17:19:38 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (43.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 133ms (Views: 116.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies/7" for ::1 at 2016-06-07 17:19:41 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 71ms (Views: 66.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-c4441ca9ff45f38d456d145385ebfdfcaa59f48649945503bbd2d3b6d47ecbc0.css?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/normalize.self-ca7c3f9c26df461561ea2e4ac7101b122f99211810ca1fb6f9acd17d48421223.css?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/layout.self-644d89740c7e822442f6baae2577b3e6515247cce5309309de8fa26d7759adb9.css?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/buttons.self-c590f8c9552f26e8cc04cc67d360c0ed17cd1e1c55418082a31e66e7b46e1e64.css?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/movies.self-8be0236bb852f9e4a3854d6bef66afaa35707d30f02d13d1bbf54dbf7f3d6f83.css?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/forms.self-3548402989718bc3790581a38678f471fa420def206bdcfb84b83de37fb6c847.css?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/turbolinks.self-ff1d37d088bcba87ddd5a9edcbdbf45f1103309d3785dfd2324d668bde626e5d.js?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/action_cable.self-97a1acc11db2782c1b61ce874bff887f64e903d3cb2b533eff50fb799c873c70.js?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/avengers-f0c5d0f2b61456cdb6fbfd804e954adc64a6314fd5caf12596a66c675c85d215.jpg" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/elements.self-05b80a4de2426c541e7d670041cf7d626517e0a9aa3316618ed6210200a7d0b1.css?body=1" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/assets/avengers-f0c5d0f2b61456cdb6fbfd804e954adc64a6314fd5caf12596a66c675c85d215.jpg" for ::1 at 2016-06-07 17:19:41 -0400
+Started GET "/movies/7/edit" for ::1 at 2016-06-07 17:20:55 -0400
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.8ms)
+  Rendered movies/_form.html.erb (26.5ms)
+  Rendered movies/edit.html.erb within layouts/application (46.3ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 420ms (Views: 367.9ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/movies/7" for ::1 at 2016-06-07 17:21:00 -0400
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4sjAJw1sxs5ry088QrEMKEkaYkMBuhaTgqvM3+Eoj3TfhmMEU8U/wCSTFl9Upcwq7g8N9rkq/m4COdFXdKv54w==", "movie"=>{"title"=>"The Avengers", "description"=>"Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.", "rating"=>"PG-13", "released_on(1i)"=>"2012", "released_on(2i)"=>"5", "released_on(3i)"=>"4", "total_gross"=>"623357910.0", "duration"=>"142 min", "image_file_name"=>"avengers.jpg", "cast"=>"Robert Downey Jr., Chris Evans, Scarlett Johansson", "director"=>"Josh Whedon"}, "commit"=>"Update Movie", "id"=>"7"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "movies" SET "title" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["title", "The Avengers"], ["updated_at", 2016-06-07 21:21:00 UTC], ["id", 7]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/movies/7
+Completed 302 Found in 14ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/movies/7" for ::1 at 2016-06-07 17:21:00 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (43.8ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 131ms (Views: 126.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies/7" for ::1 at 2016-06-07 17:21:03 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 94ms (Views: 89.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-c4441ca9ff45f38d456d145385ebfdfcaa59f48649945503bbd2d3b6d47ecbc0.css?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/normalize.self-ca7c3f9c26df461561ea2e4ac7101b122f99211810ca1fb6f9acd17d48421223.css?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/layout.self-644d89740c7e822442f6baae2577b3e6515247cce5309309de8fa26d7759adb9.css?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/elements.self-05b80a4de2426c541e7d670041cf7d626517e0a9aa3316618ed6210200a7d0b1.css?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/movies.self-8be0236bb852f9e4a3854d6bef66afaa35707d30f02d13d1bbf54dbf7f3d6f83.css?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/forms.self-3548402989718bc3790581a38678f471fa420def206bdcfb84b83de37fb6c847.css?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/turbolinks.self-ff1d37d088bcba87ddd5a9edcbdbf45f1103309d3785dfd2324d668bde626e5d.js?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/action_cable.self-97a1acc11db2782c1b61ce874bff887f64e903d3cb2b533eff50fb799c873c70.js?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/avengers-f0c5d0f2b61456cdb6fbfd804e954adc64a6314fd5caf12596a66c675c85d215.jpg" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/assets/buttons.self-c590f8c9552f26e8cc04cc67d360c0ed17cd1e1c55418082a31e66e7b46e1e64.css?body=1" for ::1 at 2016-06-07 17:21:03 -0400
+Started GET "/movies/new" for ::1 at 2016-06-07 17:25:16 -0400
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.9ms)
+  Rendered movies/_form.html.erb (17.3ms)
+  Rendered movies/new.html.erb within layouts/application (42.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 1005ms (Views: 916.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/movies" for ::1 at 2016-06-07 17:26:08 -0400
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lfe0do8FOUX1kFWZthPlNGBGUEqcYtKXrkK8OVoGjRes2YCFc/tmCu9IXCJfW2eq1Zl12KoMvw7/46lad2naWg==", "movie"=>{"title"=>"Captain America", "description"=>"A brave soldier awakes from an icy nap.", "rating"=>"PG-13", "released_on(1i)"=>"2015", "released_on(2i)"=>"5", "released_on(3i)"=>"10", "total_gross"=>"111111111", "duration"=>"123 min", "image_file_name"=>"captain.png", "cast"=>"", "director"=>""}, "commit"=>"Create Movie"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (72.2ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "total_gross", "created_at", "updated_at", "description", "released_on", "cast", "director", "duration", "image_file_name") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Captain America"], ["rating", "PG-13"], ["total_gross", #<BigDecimal:7fd079012740,'0.111111111E9',9(18)>], ["created_at", 2016-06-07 21:26:08 UTC], ["updated_at", 2016-06-07 21:26:08 UTC], ["description", "A brave soldier awakes from an icy nap."], ["released_on", Sun, 10 May 2015], ["cast", ""], ["director", ""], ["duration", "123 min"], ["image_file_name", "captain.png"]]
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/movies/8
+Completed 302 Found in 88ms (ActiveRecord: 78.9ms)
+
+
+Started GET "/movies/8" for ::1 at 2016-06-07 17:26:08 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (99.5ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_sidebar.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 374ms (Views: 350.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/captain.png" for ::1 at 2016-06-07 17:26:09 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/images/captain.png"):
+  
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.2.0) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.2.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.2.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.rc1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.rc1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.0.rc1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.0.rc1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.rc1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.rc1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.0.rc1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.rc1) lib/rails/engine.rb:522:in `call'
+puma (3.4.0) lib/puma/configuration.rb:224:in `call'
+puma (3.4.0) lib/puma/server.rb:569:in `handle_request'
+puma (3.4.0) lib/puma/server.rb:406:in `process_client'
+puma (3.4.0) lib/puma/server.rb:271:in `block in run'
+puma (3.4.0) lib/puma/thread_pool.rb:114:in `block in spawn_thread'
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered collection of /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [9 times] (187.4ms)
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (446.2ms)
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (918.2ms)
+Started DELETE "/movies/8" for ::1 at 2016-06-07 17:26:17 -0400
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"lYA8cbf9pirnyWg75tEvBrn9vEOPv48tvUtn4VSVJCcqOdIc642kzAV5eLLBaCKYt9/Dg0h74DQlSHFR668jMw==", "id"=>"8"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (41.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 8]]
+  [1m[35m (123.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 174ms (ActiveRecord: 165.8ms)
+
+
+Started GET "/movies" for ::1 at 2016-06-07 17:26:17 -0400
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on <= '2016-06-07 21:26:17.658171') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (86.6ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_sidebar.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 1239ms (Views: 516.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for ::1 at 2016-06-07 17:26:22 -0400
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on <= '2016-06-07 21:26:22.148116') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (49.9ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 183ms (Views: 178.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-c4441ca9ff45f38d456d145385ebfdfcaa59f48649945503bbd2d3b6d47ecbc0.css?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/layout.self-644d89740c7e822442f6baae2577b3e6515247cce5309309de8fa26d7759adb9.css?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/normalize.self-ca7c3f9c26df461561ea2e4ac7101b122f99211810ca1fb6f9acd17d48421223.css?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/elements.self-05b80a4de2426c541e7d670041cf7d626517e0a9aa3316618ed6210200a7d0b1.css?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/movies.self-8be0236bb852f9e4a3854d6bef66afaa35707d30f02d13d1bbf54dbf7f3d6f83.css?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/turbolinks.self-ff1d37d088bcba87ddd5a9edcbdbf45f1103309d3785dfd2324d668bde626e5d.js?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/action_cable.self-97a1acc11db2782c1b61ce874bff887f64e903d3cb2b533eff50fb799c873c70.js?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/avengers-f0c5d0f2b61456cdb6fbfd804e954adc64a6314fd5caf12596a66c675c85d215.jpg" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/ironman-e3eb46732f64b648aa205d41693e65f25a18ca53c8a777dfbdb94e552b45c7ba.jpg" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/buttons.self-c590f8c9552f26e8cc04cc67d360c0ed17cd1e1c55418082a31e66e7b46e1e64.css?body=1" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/catwoman-74f9530cf6824a8dbfc08ed06db0448512e3d4f368aede2770da9839b7f0c489.jpg" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/spiderman-148e65c4439935300de473edec6a11e372da6f38e6e2549dd43293c55a602d27.jpg" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/batman-e253babe1b7ff52b2452e4114d0304aa3bbcd105c4bfced84c22f2e8e4974f7e.jpg" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/superman-5840ede83799c51c162005328c1ef5cc536b5f1210d9bdb4a38102c4e4c1e01b.jpg" for ::1 at 2016-06-07 17:26:22 -0400
+Started GET "/assets/forms.self-3548402989718bc3790581a38678f471fa420def206bdcfb84b83de37fb6c847.css?body=1" for ::1 at 2016-06-07 17:26:22 -0400
