@@ -137,3 +137,37 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 171ms (Views: 167.4ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/movies" for ::1 at 2016-06-07 15:22:38 -0400
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on <= '2016-06-07 19:22:38.657983') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (185.9ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_sidebar.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 646ms (Views: 598.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.self-c4441ca9ff45f38d456d145385ebfdfcaa59f48649945503bbd2d3b6d47ecbc0.css?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/normalize.self-ca7c3f9c26df461561ea2e4ac7101b122f99211810ca1fb6f9acd17d48421223.css?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/layout.self-644d89740c7e822442f6baae2577b3e6515247cce5309309de8fa26d7759adb9.css?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/elements.self-05b80a4de2426c541e7d670041cf7d626517e0a9aa3316618ed6210200a7d0b1.css?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/forms.self-3548402989718bc3790581a38678f471fa420def206bdcfb84b83de37fb6c847.css?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/buttons.self-c590f8c9552f26e8cc04cc67d360c0ed17cd1e1c55418082a31e66e7b46e1e64.css?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/movies.self-8be0236bb852f9e4a3854d6bef66afaa35707d30f02d13d1bbf54dbf7f3d6f83.css?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/turbolinks.self-ff1d37d088bcba87ddd5a9edcbdbf45f1103309d3785dfd2324d668bde626e5d.js?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/action_cable.self-97a1acc11db2782c1b61ce874bff887f64e903d3cb2b533eff50fb799c873c70.js?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/ironman-e3eb46732f64b648aa205d41693e65f25a18ca53c8a777dfbdb94e552b45c7ba.jpg" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/catwoman-74f9530cf6824a8dbfc08ed06db0448512e3d4f368aede2770da9839b7f0c489.jpg" for ::1 at 2016-06-07 15:22:39 -0400
+Started GET "/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" for ::1 at 2016-06-07 15:22:40 -0400
+Started GET "/assets/spiderman-148e65c4439935300de473edec6a11e372da6f38e6e2549dd43293c55a602d27.jpg" for ::1 at 2016-06-07 15:22:40 -0400
+Started GET "/assets/batman-e253babe1b7ff52b2452e4114d0304aa3bbcd105c4bfced84c22f2e8e4974f7e.jpg" for ::1 at 2016-06-07 15:22:40 -0400
+Started GET "/assets/superman-5840ede83799c51c162005328c1ef5cc536b5f1210d9bdb4a38102c4e4c1e01b.jpg" for ::1 at 2016-06-07 15:22:40 -0400
+Started GET "/assets/logo-ed785c56e2cc4db30aa09ab20f07a6b4063d9425beb0d0d5cd42234be62d608e.png" for ::1 at 2016-06-07 15:22:40 -0400
+Started GET "/assets/background-11366054192e366b66ab01175a43f03fa2c766b72812b4e0ef3e1c7890ecc9d0.jpg" for ::1 at 2016-06-07 15:22:40 -0400
+Started GET "/assets/add-ef2a2c8a3e0973073c78930aff7279bfba272dacfe66f94c6a58d1e6998d34d5.png" for ::1 at 2016-06-07 15:22:40 -0400
+Started GET "/assets/arrow-855369fe3622cc5aad693bdaaf04bbfac7aad4439b63669dd1db64201875be9d.png" for ::1 at 2016-06-07 15:22:40 -0400
