@@ -1,7 +1,9 @@
 <article id="movie" class="movie">
   <header>
     <%= image_for(@movie) %>
+
     <h1><%= @movie.title %></h1>
+    
     <h2>Released: <%= @movie.released_on %></h2>
   </header>
 
@@ -27,7 +29,10 @@
   <p>
     <%= format_total_gross(@movie) %>
   </p>
-  
+
+  <%= link_to pluralize(@movie.reviews.size, "review"),
+              movie_reviews_path(@movie) %>
+
   <footer>
     <nav>
       <%= link_to 'Edit', edit_movie_path(@movie), class: 'button' %>
