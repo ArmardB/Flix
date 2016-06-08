@@ -4025,3 +4025,132 @@ Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde4
 Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-08 10:22:57 -0400
 Started GET "/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" for ::1 at 2016-06-08 10:22:57 -0400
 Started GET "/assets/buttons.self-c590f8c9552f26e8cc04cc67d360c0ed17cd1e1c55418082a31e66e7b46e1e64.css?body=1" for ::1 at 2016-06-08 10:22:58 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MIN("movies"."total_gross") FROM "movies"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MIN("movies"."total_gross") FROM "movies"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MIN("movies"."total_gross") FROM "movies" WHERE "movies"."rating" = ?[0m  [["rating", "PG-13"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("movies"."total_gross") FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("movies"."total_gross") FROM "movies"[0m
+  [1m[35m (65.2ms)[0m  [1m[34mSELECT SUM("movies"."total_gross") FROM "movies"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("movies"."total_gross") FROM "movies"[0m
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MIN("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/movies/7" for ::1 at 2016-06-08 10:43:04 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+  Rendered movies/show.html.erb within layouts/application (100.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 992ms (Views: 698.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/movies/7" for ::1 at 2016-06-08 10:43:51 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (4.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (623.3ms)
+Completed 500 Internal Server Error in 703ms (ActiveRecord: 4.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `format_average_stars' for #<#<Class:0x007fd07b808830>:0x007fd07c1499f8>
+Did you mean?  format_total_gross):
+    31:   </p>
+    32:   <h3>Average Review</h3>
+    33:   <p>
+    34:     <%= format_average_stars(@movie) %>
+    35:   </p>
+    36: 
+    37:   <%= link_to pluralize(@movie.reviews.size, "review"),
+  
+app/views/movies/show.html.erb:34:in `_app_views_movies_show_html_erb___758455161804332980_70266705826600'
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.9ms)
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendering /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.8ms)
+  Rendered /Users/administrator/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.rc1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (161.0ms)
+Started GET "/movies/7" for ::1 at 2016-06-08 10:48:12 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+  Rendered movies/show.html.erb within layouts/application (86.8ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_sidebar.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 684ms (Views: 556.8ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/assets/normalize.self-ca7c3f9c26df461561ea2e4ac7101b122f99211810ca1fb6f9acd17d48421223.css?body=1" for ::1 at 2016-06-08 10:48:13 -0400
+Started GET "/assets/application.self-c4441ca9ff45f38d456d145385ebfdfcaa59f48649945503bbd2d3b6d47ecbc0.css?body=1" for ::1 at 2016-06-08 10:48:13 -0400
+Started GET "/assets/layout.self-644d89740c7e822442f6baae2577b3e6515247cce5309309de8fa26d7759adb9.css?body=1" for ::1 at 2016-06-08 10:48:13 -0400
+Started GET "/assets/elements.self-05b80a4de2426c541e7d670041cf7d626517e0a9aa3316618ed6210200a7d0b1.css?body=1" for ::1 at 2016-06-08 10:48:13 -0400
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-06-08 10:48:13 -0400
+Started GET "/assets/forms.self-3548402989718bc3790581a38678f471fa420def206bdcfb84b83de37fb6c847.css?body=1" for ::1 at 2016-06-08 10:48:13 -0400
+Started GET "/assets/turbolinks.self-ff1d37d088bcba87ddd5a9edcbdbf45f1103309d3785dfd2324d668bde626e5d.js?body=1" for ::1 at 2016-06-08 10:48:14 -0400
+Started GET "/assets/movies.self-8be0236bb852f9e4a3854d6bef66afaa35707d30f02d13d1bbf54dbf7f3d6f83.css?body=1" for ::1 at 2016-06-08 10:48:14 -0400
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-06-08 10:48:14 -0400
+Started GET "/assets/action_cable.self-97a1acc11db2782c1b61ce874bff887f64e903d3cb2b533eff50fb799c873c70.js?body=1" for ::1 at 2016-06-08 10:48:14 -0400
+Started GET "/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" for ::1 at 2016-06-08 10:48:14 -0400
+Started GET "/assets/movies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-08 10:48:14 -0400
+Started GET "/assets/reviews.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-06-08 10:48:14 -0400
+Started GET "/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" for ::1 at 2016-06-08 10:48:14 -0400
+Started GET "/assets/avengers-f0c5d0f2b61456cdb6fbfd804e954adc64a6314fd5caf12596a66c675c85d215.jpg" for ::1 at 2016-06-08 10:48:14 -0400
+Started GET "/assets/buttons.self-c590f8c9552f26e8cc04cc67d360c0ed17cd1e1c55418082a31e66e7b46e1e64.css?body=1" for ::1 at 2016-06-08 10:48:14 -0400
+Started GET "/movies" for ::1 at 2016-06-08 10:48:24 -0400
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on <= '2016-06-08 14:48:24.733451') ORDER BY released_on desc[0m
+  Rendered movies/index.html.erb within layouts/application (234.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_sidebar.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 495ms (Views: 453.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/movies/10" for ::1 at 2016-06-08 10:48:27 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 10]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 10]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 10]]
+  Rendered movies/show.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 189ms (Views: 166.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-06-08 10:52:48 -0400
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE (released_on <= '2016-06-08 14:52:48.767153') ORDER BY released_on desc[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 10]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 10]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 5]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 4]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."stars") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/index.html.erb within layouts/application (147.0ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_sidebar.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 526ms (Views: 491.4ms | ActiveRecord: 4.2ms)
+
+
